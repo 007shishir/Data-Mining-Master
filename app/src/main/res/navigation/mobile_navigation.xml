@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_home">
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="com.saiful.dataminingmaster.ui.home.HomeFragment"
+        android:label="@string/menu_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_nav_home_to_mcq_rec_view"
+            app:destination="@id/mcq_rec_view" />
+        <action
+            android:id="@+id/action_nav_home_to_memorise_rec_view"
+            app:destination="@id/memorise_rec_view" />
+        <action
+            android:id="@+id/action_nav_home_to_nav_privacy_policy"
+            app:destination="@id/nav_privacy_policy" />
+        <action
+            android:id="@+id/action_nav_home_to_nav_syllabus"
+            app:destination="@id/nav_syllabus" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_syllabus"
+        android:name="com.saiful.dataminingmaster.ui.syllabus.SyllabusFragment"
+        android:label="@string/menu_syllabus"
+        tools:layout="@layout/fragment_syllabus" />
+
+    <fragment
+        android:id="@+id/nav_about_us"
+        android:name="com.saiful.dataminingmaster.ui.about.AboutUsFragment"
+        android:label="@string/menu_about_us"
+        tools:layout="@layout/fragment_about" />
+
+    <fragment
+        android:id="@+id/nav_privacy_policy"
+        android:name="com.saiful.dataminingmaster.ui.privacy.PrivacyPolicyFragment"
+        android:label="@string/menu_privacy_policy"
+        tools:layout="@layout/fragment_privacy" />
+
+    <fragment
+        android:id="@+id/nav_share"
+        android:name="com.saiful.dataminingmaster.ui.share.ShareFragment"
+        android:label="@string/menu_share"
+        tools:layout="@layout/fragment_share" />
+
+    <fragment
+        android:id="@+id/nav_send"
+        android:name="com.saiful.dataminingmaster.ui.send.SendFragment"
+        android:label="@string/menu_send"
+        tools:layout="@layout/fragment_send" />
+    <fragment
+        android:id="@+id/mcq_rec_view"
+        android:name="com.saiful.dataminingmaster.mcq.McqRecView"
+        android:label="Choose a Card!"
+        tools:layout="@layout/fragment_mcq_rec_view"/>
+    <fragment
+        android:id="@+id/memorise_rec_view"
+        android:name="com.saiful.dataminingmaster.memorise.MemoriseRecView"
+        android:label="Choose a Card!"
+        tools:layout="@layout/fragment_mcq_rec_view"/>
+</navigation>

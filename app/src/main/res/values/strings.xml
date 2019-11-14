@@ -1,0 +1,30 @@
+<resources>
+    <string name="app_name">Data Mining Master</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Data Mining Master</string>
+    <string name="nav_header_subtitle">eee.videotutorial@gmail.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="about_us">About US</string>
+
+    <string name="menu_home">Home</string>
+    <string name="menu_syllabus">Syllabus</string>
+    <string name="menu_about_us">About US</string>
+    <string name="menu_privacy_policy">Privacy Policy</string>
+    <string name="menu_share">Share</string>
+    <string name="menu_send">Send</string>
+    <string name="privacy_policy">Privacy Policy</string>
+    <string name="memorize">MEMORIZE</string>
+    <string name="mcq">MCQ</string>
+    <string name="details">Details...</string>
+    <string name="title">Data Mining and Warehousing</string>
+    <string name="welcome">Welcome!</string>
+
+    <string name="primary">Primary</string>
+    <string name="learning">Learning</string>
+    <string name="master">Master</string>
+    <string name="right">RIGHT!</string>
+    <string name="wrong">WRONG!</string>
+    <string name="child_memorize">dataMining_mem_p01</string>
+    <string name="child_mcq">dataMining_mcq_p01</string>
+</resources>
