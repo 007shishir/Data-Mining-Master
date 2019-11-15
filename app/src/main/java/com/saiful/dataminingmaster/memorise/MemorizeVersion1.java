@@ -20,7 +20,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProviders;
 
-//import com.facebook.ads.AudienceNetworkAds;
+import com.facebook.ads.AudienceNetworkAds;
 
 import com.firebase.client.DataSnapshot;
 import com.firebase.client.Firebase;
@@ -31,7 +31,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 import com.saiful.dataminingmaster.R;
 import com.squareup.picasso.Picasso;
-//import com.facebook.ads.*;
+import com.facebook.ads.*;
 
 import java.util.List;
 import java.util.Objects;
@@ -75,7 +75,7 @@ public class MemorizeVersion1 extends AppCompatActivity {
 
     String mPost_key;
     String child_Name;
-//    private AdView adView;
+    private AdView adView;
 
 
     @Override
@@ -84,16 +84,16 @@ public class MemorizeVersion1 extends AppCompatActivity {
         setContentView(R.layout.activity_memorize_version1);
         Firebase.setAndroidContext(this);
 
-//        AudienceNetworkAds.initialize(this);
-//        adView = new AdView(this,
-//                getResources().getString(R.string.facebook_rectangle_add),
-//                AdSize.RECTANGLE_HEIGHT_250);
-//        // Find the Ad Container
-//        LinearLayout adContainer = (LinearLayout) findViewById(R.id.banner_container);
-//        // Add the ad view to your activity layout
-//        adContainer.addView(adView);
-//        // Request an ad
-//        adView.loadAd();
+        AudienceNetworkAds.initialize(this);
+        adView = new AdView(this,
+                getResources().getString(R.string.facebook_medium_rectangle),
+                AdSize.RECTANGLE_HEIGHT_250);
+        // Find the Ad Container
+        LinearLayout adContainer = (LinearLayout) findViewById(R.id.banner_container);
+        // Add the ad view to your activity layout
+        adContainer.addView(adView);
+        // Request an ad
+        adView.loadAd();
 
         firebaseRootURL = getResources().getString(R.string.firebase_database_url)+"/";
 //        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);

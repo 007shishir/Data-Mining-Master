@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -17,12 +18,14 @@ import androidx.lifecycle.ViewModelProviders;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.facebook.ads.AudienceNetworkAds;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.saiful.dataminingmaster.Parameter;
 import com.saiful.dataminingmaster.R;
+import com.facebook.ads.*;
 
 import java.util.Objects;
 
@@ -37,6 +40,7 @@ public class McqRecView extends Fragment {
 
     //To check internet connection
     private ConnectivityManager connectivityManager;
+    private AdView adView;
 
 //    private FormulaViewViewModel mViewModel;
 
@@ -51,6 +55,17 @@ public class McqRecView extends Fragment {
 
         connectivityManager = (ConnectivityManager) Objects.
                 requireNonNull(getActivity()).getSystemService(CONNECTIVITY_SERVICE);
+
+        // Initialize the Audience Network SDK
+        AudienceNetworkAds.initialize(Objects.requireNonNull(getContext()));
+        adView = new AdView(getContext(), getResources().getString(R.string.facebook_banner_90),
+                AdSize.BANNER_HEIGHT_90);
+        // Find the Ad Container
+        LinearLayout adContainer = root.findViewById(R.id.banner_container);
+        // Add the ad view to your activity layout
+        adContainer.addView(adView);
+        // Request an ad
+        adView.loadAd();
 
         assert getArguments() != null;
         childName_fromFragment = getArguments().getString("child_name");
@@ -136,5 +151,13 @@ public class McqRecView extends Fragment {
             TextView post_total = mView.findViewById(R.id.mTxt_total);
             post_total.setText(total);
         }
+    }
+
+    @Override
+    public void onDestroy() {
+        if (adView != null) {
+            adView.destroy();
+        }
+        super.onDestroy();
     }
 }

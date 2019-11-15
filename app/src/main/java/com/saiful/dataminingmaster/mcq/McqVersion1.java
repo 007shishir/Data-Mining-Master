@@ -17,7 +17,7 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProviders;
 
-//import com.facebook.ads.AudienceNetworkAds;
+import com.facebook.ads.AudienceNetworkAds;
 
 import com.firebase.client.DataSnapshot;
 import com.firebase.client.Firebase;
@@ -27,7 +27,7 @@ import com.google.android.material.snackbar.Snackbar;
 
 import java.util.List;
 import java.util.Objects;
-//import com.facebook.ads.*;
+import com.facebook.ads.*;
 import com.saiful.dataminingmaster.R;
 
 public class McqVersion1 extends AppCompatActivity {
@@ -113,22 +113,22 @@ public class McqVersion1 extends AppCompatActivity {
 
         connectivityManager = (ConnectivityManager) getSystemService(CONNECTIVITY_SERVICE);
 
-//        AudienceNetworkAds.initialize(this);
-//        AdView adView1 = new AdView(this,
-//                getResources().getString(R.string.facebook_banner_add),
-//                AdSize.BANNER_HEIGHT_50);
-//        AdView adView2 = new AdView(this,
-//                getResources().getString(R.string.facebook_rectangle_add),
-//                AdSize.RECTANGLE_HEIGHT_250);
-//        // Find the Ad Container
-//        LinearLayout adContainer1 = findViewById(R.id.banner_container1);
-//        LinearLayout adContainer2 = findViewById(R.id.banner_container2);
-//        // Add the ad view to your activity layout
-//        adContainer1.addView(adView1);
-//        adContainer2.addView(adView2);
-//        // Request an ad
-//        adView1.loadAd();
-//        adView2.loadAd();
+        AudienceNetworkAds.initialize(this);
+        AdView adView1 = new AdView(this,
+                getResources().getString(R.string.facebook_banner_90),
+                AdSize.BANNER_HEIGHT_50);
+        AdView adView2 = new AdView(this,
+                getResources().getString(R.string.facebook_medium_rectangle),
+                AdSize.RECTANGLE_HEIGHT_250);
+        // Find the Ad Container
+        LinearLayout adContainer1 = findViewById(R.id.banner_container1);
+        LinearLayout adContainer2 = findViewById(R.id.banner_container2);
+        // Add the ad view to your activity layout
+        adContainer1.addView(adView1);
+        adContainer2.addView(adView2);
+        // Request an ad
+        adView1.loadAd();
+        adView2.loadAd();
 
         //connecting with viewmodel class
         mcq_viewModel = ViewModelProviders.of(this).get(Mcq_ViewModel.class);
